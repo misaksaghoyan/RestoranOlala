@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    
+    
+    <title>Background Image Animation</title>
+    <link rel="icon" type="img/x-icon" href="./img/OL150.png">
+    <link rel="stylesheet" href="LearningAxis.css">
+    </head>
+    <style type="text/css">
+        body{
+            
+            margin: 0;
+        }
+        .bgImage{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('./img/river.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            animation: bgChange 20s linear infinite;
+
+        }
+        @keyframes bgChange{
+          0%{
+            background-image: url('./img/river.jpg');
+          }
+          20%{
+            background-image: url('./img/river.jpg');
+          }
+          25%{
+            background-image: url('./img/cabin.jpg');
+          }
+          45%{
+            background-image: url('./img/cabin.jpg');
+          }
+          50%{
+            background-image: url('./img/forest.jpg');
+          }
+          70%{
+            background-image: url('./img/forest.jpg');
+          }
+          75%{
+            background-image: url('./img/man.jpg');
+          }
+          95%{
+            background-image: url('./img/man.jpg');
+          }
+        }
+        .overlay{
+            position: absolute; 
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .content{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+        }
+        .content h1{
+            font-size: 60px;
+            margin-bottom: 0px;
+
+        }
+        .content h1 span{
+            color: #00bf13;
+        }
+        .content p{
+            font-size: 18px;
+            width: 50%;
+            padding-bottom: 2px;
+            text-align: center;
+        }
+        .content button{
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            background-color: #00bf13;
+            padding: 5px 10px;
+            text-transform: uppercase;
+            border-radius: 20px;
+            transition: .5s;
+        }
+        .content button:hover{
+            background-color: #008c0e;
+        }
+        /* menu bar ul,li */
+        ul{
+            display: flex;
+            gap:1em;
+            list-style: none;
+            cursor: pointer;
+            color: red;
+
+        }
+
+        .ul li {
+            color: #fff;
+            display: grid;
+            place-content: center;
+            margin: 0;
+            
+            
+        }
+
+        .menu::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition:all .5s ease;
+            bottom: 0;
+            left: 0;
+            
+
+        }
+      
+        body {
+            background-color: blueviolet;
+        
+            
+        }
+        /* button */
+
+      button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+button{
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+/*
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+}
+
+.button1:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+*/
+
+
+img{
+  top: 20px;
+  float: left;
+  border-radius: 50px;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove{
+  50%{
+    border-radius: 60%;
+  }
+}
+
+/* nav */
+nav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 50px;
+  justify-content: center;
+  padding: 10px;
+}
+
+a{
+  position: relative;
+  cursor: pointer;
+  color: #efefee;
+  font-size: 28px;
+  padding: 0.5rem 1rem;
+  transition: color 0.25s;
+}
+
+a::after{
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: white;
+  scale: 1 0;
+  z-index: -1;
+  transition: 0.45s;
+  border-radius: 10px;
+}
+
+a:hover{
+  color: black;
+}
+
+a:hover::after{
+  scale: 1 1;
+}
+/* button2 anim */
+button2{
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  border: none;
+  color: white;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+button2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+  transition: 0.4s;
+  z-index: -1;
+}
+button2:hover::before{
+  left: 0;
+}
+button2:active{
+  box-shadow: 0 0 10px #ff00ff, 0 0 40px #00ffff, 0 0 80px #ff00ff;
+}
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+  
+      <nav>
+        <img src="./img/olala.png" width="100" height="50" alt="">
+        
+        <ul>
+          <li <p><a href=""
+           class="menu">Home</a></p></li>
+
+          <li <p><a href="https://impartial-heron-llbrbg.mystrikingly.com" target="_blank"
+           class="menu">Restoran</a></p></li>
+
+          <li <p><a href="https://misaksaghoyan.github.io/MyCafe/"
+           class="menu">OlinkaCafe</a></p></li>
+
+          <li <p><a href="https://www.w3schools.com/" class="menu">SeaIntelek</a></p></li>
+        </ul>
+      </nav>
+    
+    
+    <div class="bgImage">
+      <div class="overlay"></div>
+
+      <div class="content">
+        <h1>Worderfull<span>Nature</span></h1>
+        <p>
+          
+          <button <p><a href="www.youtube.com">O`LaLa</a></p></button><br>
+          <button2>O`LaLa2</button2>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
